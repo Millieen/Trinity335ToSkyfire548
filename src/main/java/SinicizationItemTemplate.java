@@ -1,9 +1,9 @@
 import java.io.*;
 import java.util.HashMap;
 
-public class ConvertCreatureTemplate {
+public class SinicizationItemTemplate {
 
-    public boolean ConvertCreatureTemplatesTXT(String input335file, String input548file, String outputfile) throws IOException {
+    public boolean ConvertTXT(String input335file, String input548file, String outputfile) throws IOException {
 
         //BufferedReader是可以按行读取文件
         FileInputStream input335Stream = new FileInputStream(input335file);
@@ -18,19 +18,19 @@ public class ConvertCreatureTemplate {
         HashMap<String, String> names = new HashMap<String, String>();
         while((str = bufferedReader335.readLine()) != null)
         {
-            str=str.replace("INSERT INTO `creature_template` VALUES (", "");
+            str=str.replace("INSERT INTO `item_template` VALUES (", "");
             String[] datas = str.split(",");
-            names.put(datas[0], datas[22]);
-            System.out.println(datas[0]+","+datas[22]);
+            names.put(datas[0], datas[4]);
+            System.out.println(datas[0]+","+datas[4]);
         }
 
         while((str = bufferedReader548.readLine()) != null)
         {
             //查找同名npc 335名称并替换
-            str=str.replace("INSERT INTO `creature_template` VALUES (", "");
+            str=str.replace("INSERT INTO `item_template` VALUES (", "");
             String[] datas = str.split(",");
             if(names.containsKey(datas[0])) {
-                String insertsql = "UPDATE `creature_template` SET `name`=" +names.get(datas[0]) + "' WHERE `entry`=" + datas[0] +";";
+                String insertsql = "UPDATE `item_template` SET `name`=" +names.get(datas[0]) + "' WHERE `entry`=" + datas[0] +";";
                 insertsql = insertsql.replace("'' WHERE", "' WHERE");
                 System.out.println(insertsql);
                 //输出文件并换行

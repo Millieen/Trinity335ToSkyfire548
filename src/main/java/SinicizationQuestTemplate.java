@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.HashMap;
 
-public class ConvertQuestTemplate {
+public class SinicizationQuestTemplate {
 
     public boolean ConvertTXT(String input335file, String input548file, String outputfile) throws IOException {
 

@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.HashMap;
 
-public class ConvertItemTemplate {
+public class SinicizationGameObjectTemplate {
 
     public boolean ConvertTXT(String input335file, String input548file, String outputfile) throws IOException {
 
@@ -18,19 +18,19 @@ public class ConvertItemTemplate {
         HashMap<String, String> names = new HashMap<String, String>();
         while((str = bufferedReader335.readLine()) != null)
         {
-            str=str.replace("INSERT INTO `item_template` VALUES (", "");
+            str=str.replace("INSERT INTO `gameobject_template` VALUES (", "");
             String[] datas = str.split(",");
-            names.put(datas[0], datas[4]);
-            System.out.println(datas[0]+","+datas[4]);
+            names.put(datas[0], datas[3]);
+            System.out.println(datas[0]+","+datas[3]);
         }
 
         while((str = bufferedReader548.readLine()) != null)
         {
             //查找同名npc 335名称并替换
-            str=str.replace("INSERT INTO `item_template` VALUES (", "");
+            str=str.replace("INSERT INTO `gameobject_template` VALUES (", "");
             String[] datas = str.split(",");
             if(names.containsKey(datas[0])) {
-                String insertsql = "UPDATE `item_template` SET `name`=" +names.get(datas[0]) + "' WHERE `entry`=" + datas[0] +";";
+                String insertsql = "UPDATE `gameobject_template` SET `name`=" +names.get(datas[0]) + "' WHERE `entry`=" + datas[0] +";";
                 insertsql = insertsql.replace("'' WHERE", "' WHERE");
                 System.out.println(insertsql);
                 //输出文件并换行
