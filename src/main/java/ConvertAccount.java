@@ -2,7 +2,7 @@ import TC335.characters;
 
 import java.io.*;
 
-public class ConvertCharacters {
+public class ConvertAccount {
 
     public boolean ConvertTXT(String inputfile, String outputfile) throws IOException {
 
@@ -21,13 +21,13 @@ public class ConvertCharacters {
             //逐行读取inputfile，去掉前后括号，拆开逗号分隔,转成335类型对象
             str = str.replace("(", "");
             str = str.replace(")", "");
-            characters oldcharacter = new characters(str.split(","));
+            TC335.account oldaccount = new TC335.account(str.split(","));
 
             //使用548方法从335转成548对象
-            MYWOW1_3_4.characters newcharacter = MYWOW1_3_4.characters.convert(oldcharacter);
+            MYWOW1_3_4.account newaccount = MYWOW1_3_4.account.convert(oldaccount);
 
             //通过548方法打印成带括号的value串
-            String insertsql = newcharacter.to_sql();
+            String insertsql = newaccount.to_sql();
             //输出文件并换行
             bufferedWriter.write(insertsql);
             bufferedWriter.newLine();
