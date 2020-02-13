@@ -19,4 +19,11 @@ public class ConvertDBTest {
         ConvertAccount conveter = new ConvertAccount();
         conveter.ConvertTXT(inputfile, outputfile);
     }
+    @Test
+    public void ConvertCharacterAura() throws IOException {
+        String inputfile = "./src/test/resources/character_aura.txt";
+        String outputfile = "./character_aura.txt";
+        ConvertCharacterAura conveter = new ConvertCharacterAura();
+        conveter.ConvertTXT(inputfile, outputfile);
+    }
 }

@@ -13,7 +13,6 @@ public class account {
         newaccount.v = oldaccount.v;
         newaccount.s = oldaccount.s;
         newaccount.reg_mail = oldaccount.reg_mail;
-        newaccount.token_key = oldaccount.totp_secret;
         newaccount.email = oldaccount.email;
         newaccount.joindate = oldaccount.joindate;
         newaccount.last_ip = oldaccount.last_ip;
@@ -32,6 +31,7 @@ public class account {
         return newaccount;
     }
     account() {
+        token_key = "''";
         platform = "''";
         hasBoost = 0;
     }
