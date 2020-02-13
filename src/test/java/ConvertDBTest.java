@@ -35,4 +35,12 @@ public class ConvertDBTest {
         ConvertItemInstance conveter = new ConvertItemInstance();
         conveter.ConvertTXT(inputfile, outputfile);
     }
+
+    @Test
+    public void ConvertCharacterPet() throws IOException {
+        String inputfile = "./src/test/resources/character_pet.txt";
+        String outputfile = "./character_pet.txt";
+        ConvertCharacterPet conveter = new ConvertCharacterPet();
+        conveter.ConvertTXT(inputfile, outputfile);
+    }
 }
