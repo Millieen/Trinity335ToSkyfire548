@@ -1,8 +1,8 @@
-package obj;
+package SF548;
 
-public class SF548Characters {
-    public static SF548Characters convert(TC335Characters oldcharacter) {
-        SF548Characters newcharacter = new SF548Characters();
+public class characters {
+    public static characters convert(TC335.characters oldcharacter) {
+        characters newcharacter = new characters();
         newcharacter.guid = oldcharacter.guid;
         newcharacter.account = oldcharacter.account;
         newcharacter.name = oldcharacter.name;
@@ -35,7 +35,7 @@ public class SF548Characters {
         newcharacter.trans_o = oldcharacter.trans_o;
         newcharacter.transguid = oldcharacter.transguid;
         newcharacter.extra_flags = oldcharacter.extra_flags;
-        newcharacter.stable_slots = oldcharacter.stable_slots;
+        //newcharacter.stable_slots = oldcharacter.stable_slots;
         newcharacter.at_login = oldcharacter.at_login;
         newcharacter.zone = oldcharacter.zone;
         newcharacter.death_expire_time = oldcharacter.death_expire_time;
@@ -57,25 +57,30 @@ public class SF548Characters {
         newcharacter.activespec = oldcharacter.activetalentgroup;
         newcharacter.exploredzones = oldcharacter.exploredzones;
         newcharacter.equipmentcache = oldcharacter.equipmentcache;
-        newcharacter.knowntitles = oldcharacter.knowntitles;
+        //newcharacter.knowntitles = oldcharacter.knowntitles;
         newcharacter.actionbars = oldcharacter.actionbars;
         newcharacter.grantablelevels = oldcharacter.grantablelevels;
         newcharacter.deleteinfos_acount = oldcharacter.deleteinfos_acount;
-        newcharacter.deelteinfos_name = oldcharacter.deelteinfos_name;
+        newcharacter.deleteinfos_name = oldcharacter.deleteinfos_name;
         newcharacter.deletedate = oldcharacter.deletedate;
 
-        newcharacter.playerbytes1 = oldcharacter.skin * 0x1000000 + oldcharacter.face * 0x10000 + oldcharacter.hairstyle * 0x100 + oldcharacter.haircolor;
+        newcharacter.playerbytes = oldcharacter.skin * 0x1000000 + oldcharacter.face * 0x10000 + oldcharacter.hairstyle * 0x100 + oldcharacter.haircolor;
         newcharacter.playerbytes2 = oldcharacter.facialstyle * 0x1000000 + oldcharacter.bankslots * 0x10000 + oldcharacter.reststate * 0x100 + oldcharacter.reststate;
 
         return newcharacter;
     }
 
-    SF548Characters() {
+    characters() {
         slot = 0;
-        dungeondifficulty = 1;
-        raiddifficulty = 14;
-        talentTree = "'0 0'";
-        lfgbonusfaction = 0;
+//        dungeondifficulty = 1;
+//        raiddifficulty = 14;
+//        talentTree = "'0 0'";
+//        lfgbonusfaction = 0;
+        instance_mode_mask = 0;
+        resetspecialization_cost = 0;
+        resetspecialization_time = 0;
+        specialization1 = 0;
+        specialization2 = 0;
     };
 
     int guid;
@@ -91,7 +96,7 @@ public class SF548Characters {
     int xp;
     int money;
 
-    long playerbytes1;
+    long playerbytes;
     long playerbytes2;
 
     int playerflags;
@@ -101,9 +106,7 @@ public class SF548Characters {
     int map;
     int instance_id;
 
-    int dungeondifficulty;
-    int raiddifficulty;
-
+    int instance_mode_mask;
     double orientation;
     String taximask;
     int online;
@@ -116,7 +119,8 @@ public class SF548Characters {
     int resettalents_cost;
     int resettalents_time;
 
-    String talentTree;
+    int resetspecialization_cost;
+    int resetspecialization_time;
 
     double trans_x;
     double trans_y;
@@ -124,7 +128,6 @@ public class SF548Characters {
     double trans_o;
     int transguid;
     int extra_flags;
-    int stable_slots;
     int at_login;
     int zone;
     int death_expire_time;
@@ -137,8 +140,6 @@ public class SF548Characters {
     //int knowncurrencies;
     long watchedfaction;
 
-    int lfgbonusfaction;
-
     int drunk;
     int health;
     int power1;
@@ -150,14 +151,16 @@ public class SF548Characters {
     int latency;
     int speccount;
     int activespec;
+    int specialization1;
+    int specialization2;
+
     String exploredzones;
     String equipmentcache;
 
-    String knowntitles;
     int actionbars;
     int grantablelevels;
     String deleteinfos_acount;
-    String deelteinfos_name;
+    String deleteinfos_name;
     String deletedate;
 
     public String to_sql() {
@@ -182,7 +185,7 @@ public class SF548Characters {
         sql += ", ";
         sql += String.valueOf(money);
         sql += ", ";
-        sql += String.valueOf(playerbytes1);
+        sql += String.valueOf(playerbytes);
         sql += ", ";
         sql += String.valueOf(playerbytes2);
         sql += ", ";
@@ -198,9 +201,11 @@ public class SF548Characters {
         sql += ", ";
         sql += String.valueOf(instance_id);
         sql += ", ";
-        sql += String.valueOf(dungeondifficulty);
-        sql += ", ";
-        sql += String.valueOf(raiddifficulty);
+//        sql += String.valueOf(dungeondifficulty);
+//        sql += ", ";
+//        sql += String.valueOf(raiddifficulty);
+//        sql += ", ";
+        sql += String.valueOf(instance_mode_mask);
         sql += ", ";
         sql += String.valueOf(orientation);
         sql += ", ";
@@ -224,8 +229,12 @@ public class SF548Characters {
         sql += ", ";
         sql += String.valueOf(resettalents_time);
         sql += ", ";
-        sql += talentTree;
+        sql += String.valueOf(resetspecialization_cost);
         sql += ", ";
+        sql += String.valueOf(resetspecialization_time);
+        sql += ", ";
+//        sql += talentTree;
+//        sql += ", ";
         sql += String.valueOf(trans_x);
         sql += ", ";
         sql += String.valueOf(trans_y);
@@ -238,8 +247,8 @@ public class SF548Characters {
         sql += ", ";
         sql += String.valueOf(extra_flags);
         sql += ", ";
-        sql += String.valueOf(stable_slots);
-        sql += ", ";
+//        sql += String.valueOf(stable_slots);
+//        sql += ", ";
         sql += String.valueOf(at_login);
         sql += ", ";
         sql += String.valueOf(zone);
@@ -258,8 +267,8 @@ public class SF548Characters {
         sql += ", ";
         sql += String.valueOf(watchedfaction);
         sql += ", ";
-        sql += String.valueOf(lfgbonusfaction);
-        sql += ", ";
+//        sql += String.valueOf(lfgbonusfaction);
+//        sql += ", ";
         sql += String.valueOf(drunk);
         sql += ", ";
         sql += String.valueOf(health);
@@ -280,19 +289,23 @@ public class SF548Characters {
         sql += ", ";
         sql += String.valueOf(activespec);
         sql += ", ";
+        sql += String.valueOf(specialization1);
+        sql += ", ";
+        sql += String.valueOf(specialization2);
+        sql += ", ";
         sql += exploredzones;
         sql += ", ";
         sql += equipmentcache;
         sql += ", ";
-        sql += knowntitles;
-        sql += ", ";
+//        sql += knowntitles;
+//        sql += ", ";
         sql += String.valueOf(actionbars);
         sql += ", ";
         sql += String.valueOf(grantablelevels);
         sql += ", ";
         sql += deleteinfos_acount;
         sql += ", ";
-        sql += deelteinfos_name;
+        sql += deleteinfos_name;
         sql += ", ";
         sql += deletedate;
         sql += ");";

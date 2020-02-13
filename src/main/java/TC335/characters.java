@@ -1,8 +1,8 @@
-package obj;
+package TC335;
 
-public class TC335Characters {
+public class characters {
 
-    public TC335Characters(String[] indata) {
+    public characters(String[] indata) {
         guid = Integer.parseInt(indata[0]);
         account = Integer.parseInt(indata[1]);
         name = indata[2];
@@ -77,95 +77,84 @@ public class TC335Characters {
         actionbars = Integer.parseInt(indata[71]);
         grantablelevels = Integer.parseInt(indata[72]);
         deleteinfos_acount = indata[73];
-        deelteinfos_name = indata[74];
+        deleteinfos_name = indata[74];
         deletedate = indata[75];
     }
 
-    int guid;
-    int account;
-    String name;
-
-    int race;
-    int i_class;
-    int gender;
-    int level;
-    int xp;
-    int money;
-
-    int skin;
-    int face;
-    int hairstyle;
-    int haircolor;
-    int facialstyle;
-    int bankslots;
-    int reststate;
-
-    int playerflags;
-    double pos_x;
-    double pos_y;
-    double pos_z;
-    int map;
-    int instance_id;
-
-    int instance_mode_mask;
-
-    double orientation;
-    String taximask;
-    int online;
-    int cinematic;
-    int totaltime;
-    int leveltime;
-    int logout_time;
-    int is_logout_resting;
-    double rest_bonus;
-    int resettalents_cost;
-    int resettalents_time;
-
-    double trans_x;
-    double trans_y;
-    double trans_z;
-    double trans_o;
-    int transguid;
-    int extra_flags;
-    int stable_slots;
-    int at_login;
-    int zone;
-    int death_expire_time;
-    String taxi_path;
-
-    int arenaPoints;
-    int totalHonorPoints;
-    int todayHonorPoints;
-    int yesterdayHonorPoints;
-
-    int totalkills;
-    int todaykills;
-    int yesterdaykills;
-    int chosentitle;
-    int knowncurrencies;
-    long watchedfaction;
-    int drunk;
-    int health;
-    int power1;
-    int power2;
-    int power3;
-    int power4;
-    int power5;
-
-    int power6;
-    int power7;
-    int latency;
-    int talentgroupscount;
-    int activetalentgroup;
-    String exploredzones;
-    String equipmentcache;
-
-    int ammoid;
-
-    String knowntitles;
-    int actionbars;
-    int grantablelevels;
-    String deleteinfos_acount;
-    String deelteinfos_name;
-    String deletedate;
+    public int guid;
+    public int account;
+    public String name;
+    public int race;
+    public int i_class;
+    public int gender;
+    public int level;
+    public int xp;
+    public int money;
+    public int skin;
+    public int face;
+    public int hairstyle;
+    public int haircolor;
+    public int facialstyle;
+    public int bankslots;
+    public int reststate;
+    public int playerflags;
+    public double pos_x;
+    public double pos_y;
+    public double pos_z;
+    public int map;
+    public int instance_id;
+    public int instance_mode_mask;
+    public double orientation;
+    public String taximask;
+    public int online;
+    public int cinematic;
+    public int totaltime;
+    public int leveltime;
+    public int logout_time;
+    public int is_logout_resting;
+    public double rest_bonus;
+    public int resettalents_cost;
+    public int resettalents_time;
+    public double trans_x;
+    public double trans_y;
+    public double trans_z;
+    public double trans_o;
+    public int transguid;
+    public int extra_flags;
+    public int stable_slots;
+    public int at_login;
+    public int zone;
+    public int death_expire_time;
+    public String taxi_path;
+    public int arenaPoints;
+    public int totalHonorPoints;
+    public int todayHonorPoints;
+    public int yesterdayHonorPoints;
+    public int totalkills;
+    public int todaykills;
+    public int yesterdaykills;
+    public int chosentitle;
+    public int knowncurrencies;
+    public long watchedfaction;
+    public int drunk;
+    public int health;
+    public int power1;
+    public int power2;
+    public int power3;
+    public int power4;
+    public int power5;
+    public int power6;
+    public int power7;
+    public int latency;
+    public int talentgroupscount;
+    public int activetalentgroup;
+    public String exploredzones;
+    public String equipmentcache;
+    public int ammoid;
+    public String knowntitles;
+    public int actionbars;
+    public int grantablelevels;
+    public String deleteinfos_acount;
+    public String deleteinfos_name;
+    public String deletedate;
 }

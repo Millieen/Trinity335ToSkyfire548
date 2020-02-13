@@ -1,5 +1,4 @@
-import obj.SF548Characters;
-import obj.TC335Characters;
+import TC335.characters;
 
 import java.io.*;
 
@@ -20,12 +19,12 @@ public class ConvertCharacters {
             System.out.println(str);
 
             //逐行读取inputfile，去掉前后括号，拆开逗号分隔,转成335类型对象
-            str = str.replace("INSERT INTO `creature_template` VALUES (", "");
-            str = str.replace(");", "");
-            TC335Characters oldcharacter = new TC335Characters(str.split(","));
+            str = str.replace("(", "");
+            str = str.replace(")", "");
+            characters oldcharacter = new characters(str.split(","));
 
             //使用548方法从335转成548对象
-            SF548Characters newcharacter = SF548Characters.convert(oldcharacter);
+            SF548.characters newcharacter = SF548.characters.convert(oldcharacter);
 
             //通过548方法打印成带括号的value串
             String insertsql = newcharacter.to_sql();
@@ -35,10 +34,10 @@ public class ConvertCharacters {
         }
 
         //close
-        inputStream.close();
         bufferedReader.close();
-        outputStream.close();
+        inputStream.close();
         bufferedWriter.close();
+        outputStream.close();
 
         return true;
     }
