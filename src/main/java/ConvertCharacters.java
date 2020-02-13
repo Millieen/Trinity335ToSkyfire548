@@ -24,7 +24,7 @@ public class ConvertCharacters {
             characters oldcharacter = new characters(str.split(","));
 
             //使用548方法从335转成548对象
-            SF548.characters newcharacter = SF548.characters.convert(oldcharacter);
+            MYWOW1_3_4.characters newcharacter = MYWOW1_3_4.characters.convert(oldcharacter);
 
             //通过548方法打印成带括号的value串
             String insertsql = newcharacter.to_sql();

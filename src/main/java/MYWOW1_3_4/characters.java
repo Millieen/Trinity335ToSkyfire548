@@ -1,4 +1,4 @@
-package SF548;
+package MYWOW1_3_4;
 
 public class characters {
     public static characters convert(TC335.characters oldcharacter) {
